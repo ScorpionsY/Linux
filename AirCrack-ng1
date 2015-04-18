@@ -1,0 +1,46 @@
+1.AirCrack-ng  
+  Aircrack is an 802.11 WEP and WPA-PSK keys cracking program that can recover keys once enough data packets have been captured. It implements the standard FMS attack along with some optimizations like KoreK attacks, thus making the attack much faster compared to other WEP cracking tools. In fact, aircrack is a set of tools for auditing wireless networks.  
+  Aircrack是一个802.11协议WEP和WPA-PSK密钥破解程序,能够恢复出密钥当抓取了足够的数据包的时候.它执行标准FMS攻击并提供一些优化(算法)像Korek攻击,因此相比其他WEP破解工具能够更加快的进行攻击.事实上,Aircrack是一系列的工具用以审计无线网络.   
+  Aircrack-ng 1.0 r1645 - (C) 2006, 2007, 2008, 2009 Thomas d'Otreppe  
+  Original work: Christophe Devine  
+  http://www.aircrack-ng.org  
+  
+  usage: aircrack-ng [options] <.cap / .ivs file(s)>  
+  使用方法: aircrack-ng [选项] <.cap 或 .ivs文件>  
+  
+  Common options:                                             //命令选项  
+      -a <amode> : force attack mode (1/WEP, 2/WPA-PSK)       //设置攻击模式(1是WEP,2是WPA-PSK)  
+      -e <essid> : target selection: network identifier       //目标选择:网络标识(如TP-LINK)  
+      -b <bssid> : target selection: access point's MAC       //目标选择:AP的MAC地址  
+      -p <nbcpu> : # of CPU to use  (default: all CPUs)       //使用的CPU(缺省值:全部CPU)  
+      -q         : enable quiet mode (no status output)       //开启安静模式(不输出状态)  
+      -C <macs>  : merge the given APs to a virtual one       //归并给的AP到一个虚拟的  
+      -l <file>  : write key to file                          //把密钥key写入文件  
+  
+  Static WEP cracking options:                                //静态WEP破解选项  
+      -c         : search alpha-numeric characters only       //只搜索字母和数字的字符  
+      -t         : search binary coded decimal chr only       //只搜索二-十进制的字符  
+      -h         : search the numeric key for Fritz!BOX       //搜索数字密钥(给Fritz!BOX)  
+      -d <mask>  : use masking of the key (A1:XX:CF:YY)       //使用密钥掩码,就是用户提供密钥片段  
+      -m <maddr> : MAC address to filter usable packets       //MAC地址用以过滤掉无用数据包  
+      -n <nbits> : WEP key length :  64/128/152/256/512       //WEP密钥长度:64/128/152/256/512  
+      -i <index> : WEP key index (1 to 4), default: any       //WEP密钥索引(1至4),缺省值:任何  
+      -f <fudge> : bruteforce fudge factor,  default: 2       //穷举猜测因子,缺省值:2  
+      -k <korek> : disable one attack method  (1 to 17)       //取消Korek的某一种攻击方法(1到17)  
+      -x or -x0  : disable bruteforce for last keybytes       //取消最后一个密钥字节的穷举  
+      -x1        : last keybyte bruteforcing  (default)       //最后一个密钥字节进行穷举(缺省)  
+      -x2        : enable last  2 keybytes bruteforcing       //设置最后两个密钥字节进行穷举  
+      -y         : experimental  single bruteforce mode       //实验性的单一穷举模式  
+      -K         : use only old KoreK attacks (pre-PTW)       //只是用旧KoreK攻击(Pre-PTW方式)  
+      -s         : show the key in ASCII while cracking       //破解时显示密钥的ASCII值  
+      -M <num>   : specify maximum number of IVs to use       //指定最大使用的IVs(初始向量)  
+      -D         : WEP decloak, skips broken keystreams       //WEP伪装,跳过坏掉的密钥流  
+      -P <num>   : PTW debug:  1: disable Klein, 2: PTW       //PTW排错:1:取消Klein(方式),2:PTW  
+      -1         : run only 1 try to crack key with PTW       //只运行一次尝试用PTW破解密钥  
+  
+  WEP and WPA-PSK cracking options:                           //WEP和WPA-PSK破解选项  
+      -w <words> : path to wordlist(s) filename(s)            //字典文件路径  
+      -r <DB>    : path to airolib-ng database                //airolib-ng数据库路径,不能和-w选项同时用  
+                   (Cannot be used with -w)  
+  
+      --help     : Displays this usage screen                 //显示这个帮助界面  
