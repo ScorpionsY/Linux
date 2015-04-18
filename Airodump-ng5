@@ -1,0 +1,46 @@
+802.11 packet capture program. Part of the aircrack suite.   
+  802.11数据包抓包程序.是AirCrack(工具)组的一部分.  
+  Airodump-ng 1.0 r1645 - (C) 2006, 2007, 2008, 2009 Thomas d'Otreppe  
+  Original work: Christophe Devine  
+  http://www.aircrack-ng.org  
+  
+  usage: airodump-ng <options> <interface>[,<interface>,...]  
+  使用方法: airodump-ng <选项> <接口>[,<接口>,...]  
+  
+  Options:      //选项  
+      --ivs               : Save only captured IVs                    //只保存初始向量数据包  
+      --gpsd              : Use GPSd                                  //使用GPSd  
+      --write    <prefix> : Dump file prefix                          //转储文件名前缀  
+      -w                  : same as --write                           //和--write相同  
+      --beacons           : Record all beacons in dump file           //在转储文件里记录所有信标  
+      --update     <secs> : Display update delay in seconds           //显示校正延迟时间  
+      --showack           : Prints ack/cts/rts statistics             //显示ack,cts,rts统计  
+      -h                  : Hides known stations for --showack        //对--showack命令隐藏已知站点  
+      -f          <msecs> : Time in ms between hopping channels       //跳跃信道的时间,毫秒表示  
+      --berlin     <secs> : Time before removing the AP/client        //从屏幕移除AP或客户端的时间  
+                            from the screen when no more packets      //当没有收到更多数据包的时候  
+                            are received (Default: 120 seconds)       //缺省值是120秒  
+      -r           <file> : Read packets from that file               //从指定文件中读取数据包  
+      -x          <msecs> : Active Scanning Simulation                //模拟主动扫描  
+      --output-format  
+                <formats> : Output format. Possible values:           //输出格式.可能的取值:如下行  
+                            pcap, ivs, csv, gps, kismet, netxml   
+  
+  Filter options:                                                     //过滤器选项  
+      --encrypt   <suite> : Filter APs by cipher suite                //通过加密方式过滤AP  
+      --netmask <netmask> : Filter APs by mask                        //通过掩码过滤AP  
+      --bssid     <bssid> : Filter APs by BSSID                       //通过BSSID过滤AP  
+      -a                  : Filter unassociated clients               //过滤无客户端连接  
+  
+  By default, airodump-ng hop on 2.4Ghz channels.                     //通常airodump-ng在2.4Ghz的信道上跃变  
+  You can make it capture on other/specific channel(s) by using:      //你可以让它抓取其他(特定)信道  
+      --channel <channels>: Capture on specific channels              //抓取指定信道  
+      --band <abg>        : Band on which airodump-ng should hop      //airodump-ng跃变的频带  
+      -C    <frequencies> : Uses these frequencies in MHz to hop      //使用这些频率(单位MHz)跃变  
+      --cswitch  <method> : Set channel switching method              //设置信道转换的方法  
+                    0     : FIFO (default)                            //先进先出(缺省)  
+                    1     : Round Robin                               //循环  
+                    2     : Hop on last                               //最后一次跃变  
+      -s                  : same as --cswitch                         //功能如--cswitch  
+  
+      --help              : Displays this usage screen                //显示这个帮助界面 
