@@ -1,0 +1,35 @@
+BackTrack工具列表中没有工具说明.  
+  Airdecloak-ng 1.0 r1645 - (C) 2008, 2009 Thomas d'Otreppe  
+  http://www.aircrack-ng.org  
+  
+  usage: airdecloak-ng [options]  
+  使用方法: airdecloak-ng [选项]  
+    
+  options:                                                                  //选项  
+   Mandatory:                                                               //强制的  
+     -i <file>             : Input capture file                             //输入数据包文件  
+     --ssid <ESSID>        : ESSID of the network to filter                 //用以过滤的网络ESSID  
+        or                                                                  //或  
+     --bssid <BSSID>       : BSSID of the network to filter                 //用以过滤的网络BSSID  
+  
+   Optional:                                                                //可选择的  
+     --filters <filters>   : Apply filters (separated by a comma). Filters: //应用过滤器(用逗号分开)  
+           signal:               Try to filter based on signal.             //基于信号尝试过滤  
+           duplicate_sn:         Remove all duplicate sequence numbers      //移除所有AP和客户端的重复顺序号  
+                                 for both the AP and the client.  
+           duplicate_sn_ap:      Remove duplicate sequence number for       //移除AP的重复顺序号  
+                                 the AP only.  
+           duplicate_sn_client:  Remove duplicate sequence number for the   //移除客户端的重复顺序号  
+                                 client only.  
+           consecutive_sn:       Filter based on the fact that IV should    //基于IV必须连续事实的过滤器(只用于AP)  
+                                 be consecutive (only for AP).    
+           duplicate_iv:         Remove all duplicate IV.                   //移除所有重复的IV  
+           signal_dup_consec_sn: Use signal (if available), duplicate and   //使用信号(如果可用),重复和连续的顺序号  
+                                 consecutive sequence number (filtering is  //筛选将会比一个一个使用过滤器更加精确  
+                                  much more precise than using all these   
+                                  filters one by one).  
+     --null-packets        : Assume that null packets can be cloaked.       //假设空数据包能够伪装  
+     --disable-base_filter : Do not apply base filter.                      //不要应用基准过滤器  
+     --drop-frag           : Drop fragmented packets                        //丢弃碎片数据包  
+  
+     --help                : Displays this usage screen                     //显示这个帮助界面  
