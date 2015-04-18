@@ -1,0 +1,5 @@
+a utility to check an wifi interfaces status and placing the interface into monitor mode. Part of the aircrack suite.   
+  一个用来检查wifi接口状态和更改接口进入监控模式的工具.是AirCrack(工具)组的一部分.  
+  
+  usage: airmon-ng <start|stop|check> <interface> [channel or frequency]  
+  使用方法: airmon-ng <start或stop或check> <接口> [信道或频率]  
